@@ -578,6 +578,14 @@
     [
       "db7756aa-b7f6-4357-ad6e-f204384e9cf5",
       "Stammblatt"
+    ],
+    [
+      "c0066c6c-44dc-49da-889b-b666c4212450",
+      "01_Input"
+    ],
+    [
+      "258d2df1-2e74-4607-a728-cf3b51483e10",
+      "02_MCU"
     ]
   ],
   "text_variables": {}
