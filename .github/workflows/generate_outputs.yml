@@ -47,29 +47,29 @@ jobs:
           kicad-cli pcb export pdf -l F.Fab,Edge.Cuts ${PRJ_NAME}.kicad_pcb -o top.pdf
           kicad-cli pcb export pdf -l B.Fab,Edge.Cuts --mirror ${PRJ_NAME}.kicad_pcb -o bot.pdf
           gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -sOutputFile=${PRJ_NAME}_Placement_${HW_REV}.pdf top.pdf bot.pdf
-          
+
       - name: Archive reports
         uses: actions/upload-artifact@v4
         with:
-          name: ${PRJ_NAME}_reports
+          name: ${{ env.PRJ_NAME }}_reports
           path: |
-            ${PRJ_NAME}_DRC_*
-            ${PRJ_NAME}_ERC_*
-            
+            ${{ env.PRJ_NAME }}_DRC_*
+            ${{ env.PRJ_NAME }}_ERC_*
+
       - name: Archive outputs
         uses: actions/upload-artifact@v4
         with:
-          name: ${PRJ_NAME}_outputs
+          name: ${{ env.PRJ_NAME }}_outputs
           path: |
-            ${PRJ_NAME}_Schematic_*.pdf
-            ${PRJ_NAME}_Placement_*.pdf
-            ${PRJ_NAME}_Bom_*.csv
+            ${{ env.PRJ_NAME }}_Schematic_*.pdf
+            ${{ env.PRJ_NAME }}_Placement_*.pdf
+            ${{ env.PRJ_NAME }}_Bom_*.csv
 
       - name: Release
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/rev_*')
         with:
           files: |
-            ${PRJ_NAME}_Schematic_*.pdf
-            ${PRJ_NAME}_Placement_*.pdf
-            ${PRJ_NAME}_Bom_*.csv
+            ${{ env.PRJ_NAME }}_Schematic_*.pdf
+            ${{ env.PRJ_NAME }}_Placement_*.pdf
+            ${{ env.PRJ_NAME }}_Bom_*.csv
