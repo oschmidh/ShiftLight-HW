@@ -811,7 +811,7 @@
 				)
 			)
 		)
-		(symbol "Personal_lib:MSPM0C1104SDDFR"
+		(symbol "Personal_Lib:MSPM0C1104SDDFR"
 			(pin_names
 				(offset 0.254)
 			)
@@ -1039,7 +1039,7 @@
 				)
 			)
 		)
-		(symbol "Personal_lib:TLC59208F"
+		(symbol "Personal_Lib:TLC59208F"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1444,7 +1444,7 @@
 				)
 			)
 		)
-		(symbol "Personal_lib:TLV803ExxxDBZ"
+		(symbol "Personal_Lib:TLV803ExxxDBZ"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1579,7 +1579,7 @@
 				)
 			)
 		)
-		(symbol "Personal_lib:VEML7700"
+		(symbol "Personal_Lib:VEML7700"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -5481,7 +5481,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Personal_lib:VEML7700")
+		(lib_id "Personal_Lib:VEML7700")
 		(at 158.75 151.13 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5894,7 +5894,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Personal_lib:MSPM0C1104SDDFR")
+		(lib_id "Personal_Lib:MSPM0C1104SDDFR")
 		(at 54.61 59.69 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6666,7 +6666,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Personal_lib:TLV803ExxxDBZ")
+		(lib_id "Personal_Lib:TLV803ExxxDBZ")
 		(at 82.55 154.94 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7262,7 +7262,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Personal_lib:TLC59208F")
+		(lib_id "Personal_Lib:TLC59208F")
 		(at 195.58 80.01 0)
 		(unit 1)
 		(exclude_from_sim no)

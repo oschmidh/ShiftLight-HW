@@ -1679,7 +1679,7 @@
 				)
 			)
 		)
-		(symbol "Personal_lib:LMR51406YDBV"
+		(symbol "Personal_Lib:LMR51406YDBV"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1871,7 +1871,7 @@
 				)
 			)
 		)
-		(symbol "Personal_lib:L_WindingIndicator"
+		(symbol "Personal_Lib:L_WindingIndicator"
 			(pin_numbers hide)
 			(pin_names
 				(offset 1.016) hide)
@@ -2039,7 +2039,7 @@
 				)
 			)
 		)
-		(symbol "Personal_lib:VESD05B1-02V"
+		(symbol "Personal_Lib:VESD05B1-02V"
 			(pin_numbers hide)
 			(pin_names hide)
 			(exclude_from_sim no)
@@ -4659,7 +4659,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Personal_lib:LMR51406YDBV")
+		(lib_id "Personal_Lib:LMR51406YDBV")
 		(at 90.17 142.24 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5346,7 +5346,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Personal_lib:L_WindingIndicator")
+		(lib_id "Personal_Lib:L_WindingIndicator")
 		(at 113.03 147.32 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6619,7 +6619,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Personal_lib:VESD05B1-02V")
+		(lib_id "Personal_Lib:VESD05B1-02V")
 		(at 118.11 85.09 270)
 		(unit 1)
 		(exclude_from_sim no)
