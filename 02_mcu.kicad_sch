@@ -929,7 +929,7 @@
 						)
 					)
 				)
-				(pin power_out line
+				(pin power_in line
 					(at 5.08 -17.78 0)
 					(length 2.54)
 					(name "VSS"
@@ -1068,7 +1068,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tlc5916.pdf"
+			(property "Datasheet" ""
 				(at 13.97 17.78 0)
 				(effects
 					(font
@@ -1077,7 +1077,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "8-Channel Constant-Current LED Sink Driver"
+			(property "Description" ""
 				(at 12.7 17.78 0)
 				(effects
 					(font
@@ -1249,7 +1249,7 @@
 						)
 					)
 				)
-				(pin power_out line
+				(pin power_in line
 					(at 1.27 -17.78 90)
 					(length 2.54)
 					(name "EP"
@@ -1285,7 +1285,7 @@
 						)
 					)
 				)
-				(pin power_out line
+				(pin power_in line
 					(at 3.81 -17.78 90)
 					(length 2.54)
 					(name "EP"
@@ -1393,7 +1393,7 @@
 						)
 					)
 				)
-				(pin power_out line
+				(pin power_in line
 					(at -2.54 -17.78 90)
 					(length 2.54)
 					(name "GND"
@@ -1601,7 +1601,7 @@
 					(justify left)
 				)
 			)
-			(property "Footprint" "Sensor:Vishay_VEML7700"
+			(property "Footprint" "Personal_Lib:Vishay_VEML7700"
 				(at 0 -12.7 0)
 				(effects
 					(font
@@ -1629,15 +1629,6 @@
 				)
 			)
 			(property "ki_keywords" "opto ambient light sensor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Broadcom*LGA*2x2mm*P0.53mm*"
 				(at 0 0 0)
 				(effects
 					(font
@@ -5517,7 +5508,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Sensor:Vishay_VEML7700"
+		(property "Footprint" "Personal_Lib:Vishay_VEML7700"
 			(at 158.75 163.83 0)
 			(effects
 				(font

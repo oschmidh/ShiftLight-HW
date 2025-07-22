@@ -5370,7 +5370,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Inductor_SMD:L_TDK_VLS3015CX"
+		(property "Footprint" "Personal_Lib:L_TDK_VLS3015CX"
 			(at 113.03 147.32 0)
 			(effects
 				(font
