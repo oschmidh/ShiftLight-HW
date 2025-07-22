@@ -811,7 +811,7 @@
 				)
 			)
 		)
-		(symbol "Personal_lib:MSPM0C1104SDDFR"
+		(symbol "Personal_Lib:MSPM0C1104SDDFR"
 			(pin_names
 				(offset 0.254)
 			)
@@ -929,7 +929,7 @@
 						)
 					)
 				)
-				(pin power_out line
+				(pin power_in line
 					(at 5.08 -17.78 0)
 					(length 2.54)
 					(name "VSS"
@@ -1039,7 +1039,7 @@
 				)
 			)
 		)
-		(symbol "Personal_lib:TLC59208F"
+		(symbol "Personal_Lib:TLC59208F"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1068,7 +1068,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tlc5916.pdf"
+			(property "Datasheet" ""
 				(at 13.97 17.78 0)
 				(effects
 					(font
@@ -1077,7 +1077,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "8-Channel Constant-Current LED Sink Driver"
+			(property "Description" ""
 				(at 12.7 17.78 0)
 				(effects
 					(font
@@ -1249,7 +1249,7 @@
 						)
 					)
 				)
-				(pin power_out line
+				(pin power_in line
 					(at 1.27 -17.78 90)
 					(length 2.54)
 					(name "EP"
@@ -1285,7 +1285,7 @@
 						)
 					)
 				)
-				(pin power_out line
+				(pin power_in line
 					(at 3.81 -17.78 90)
 					(length 2.54)
 					(name "EP"
@@ -1393,7 +1393,7 @@
 						)
 					)
 				)
-				(pin power_out line
+				(pin power_in line
 					(at -2.54 -17.78 90)
 					(length 2.54)
 					(name "GND"
@@ -1444,7 +1444,7 @@
 				)
 			)
 		)
-		(symbol "Personal_lib:TLV803ExxxDBZ"
+		(symbol "Personal_Lib:TLV803ExxxDBZ"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1579,7 +1579,7 @@
 				)
 			)
 		)
-		(symbol "Personal_lib:VEML7700"
+		(symbol "Personal_Lib:VEML7700"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1601,7 +1601,7 @@
 					(justify left)
 				)
 			)
-			(property "Footprint" "Sensor:Vishay_VEML7700"
+			(property "Footprint" "Personal_Lib:Vishay_VEML7700"
 				(at 0 -12.7 0)
 				(effects
 					(font
@@ -1629,15 +1629,6 @@
 				)
 			)
 			(property "ki_keywords" "opto ambient light sensor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Broadcom*LGA*2x2mm*P0.53mm*"
 				(at 0 0 0)
 				(effects
 					(font
@@ -5490,7 +5481,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Personal_lib:VEML7700")
+		(lib_id "Personal_Lib:VEML7700")
 		(at 158.75 151.13 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5517,7 +5508,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Sensor:Vishay_VEML7700"
+		(property "Footprint" "Personal_Lib:Vishay_VEML7700"
 			(at 158.75 163.83 0)
 			(effects
 				(font
@@ -5903,7 +5894,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Personal_lib:MSPM0C1104SDDFR")
+		(lib_id "Personal_Lib:MSPM0C1104SDDFR")
 		(at 54.61 59.69 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6675,7 +6666,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Personal_lib:TLV803ExxxDBZ")
+		(lib_id "Personal_Lib:TLV803ExxxDBZ")
 		(at 82.55 154.94 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7271,7 +7262,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Personal_lib:TLC59208F")
+		(lib_id "Personal_Lib:TLC59208F")
 		(at 195.58 80.01 0)
 		(unit 1)
 		(exclude_from_sim no)

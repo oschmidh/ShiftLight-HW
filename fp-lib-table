@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "Personal_Lib")(type "KiCad")(uri "${KIPRJMOD}/libraries/footprints/personal-lib.pretty")(options "")(descr ""))
+)
