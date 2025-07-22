@@ -52,7 +52,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${PRJ_NAME}_reports
-          files: |
+          path: |
             ${PRJ_NAME}_DRC_*
             ${PRJ_NAME}_ERC_*
             
@@ -60,7 +60,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${PRJ_NAME}_outputs
-          files: |
+          path: |
             ${PRJ_NAME}_Schematic_*.pdf
             ${PRJ_NAME}_Placement_*.pdf
             ${PRJ_NAME}_Bom_*.csv
