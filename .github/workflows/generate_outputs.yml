@@ -33,11 +33,13 @@ jobs:
       - name: DRC
         working-directory: src
         run: |
+          HW_REV=$(git describe --tags --always)
           kicad-cli pcb drc ${PRJ_NAME}.kicad_pcb -o ${PRJ_NAME}_DRC_${HW_REV}
 
       - name: Export outputs
         working-directory: src
         run: |
+          HW_REV=$(git describe --tags --always)
           sudo apt update
           sudo apt install -y ghostscript
           kicad-cli sch export pdf ${PRJ_NAME}.kicad_sch -o ${PRJ_NAME}_Schematic_${HW_REV}.pdf
@@ -49,7 +51,7 @@ jobs:
       - name: Archive reports
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ env.PRJ_NAME }}_reports_${{ env.HW_REV }}
+          name: ${{ env.PRJ_NAME }}_reports
           path: |
             src/${{ env.PRJ_NAME }}_DRC_*
             src/${{ env.PRJ_NAME }}_ERC_*
@@ -57,7 +59,7 @@ jobs:
       - name: Archive outputs
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ env.PRJ_NAME }}_outputs_${{ env.HW_REV }}
+          name: ${{ env.PRJ_NAME }}_outputs
           path: |
             src/${{ env.PRJ_NAME }}_Schematic_*.pdf
             src/${{ env.PRJ_NAME }}_Placement_*.pdf
