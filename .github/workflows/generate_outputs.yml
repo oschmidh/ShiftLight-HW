@@ -52,10 +52,19 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${PRJ_NAME}_reports
-          path: |
+          files: |
             ${PRJ_NAME}_DRC_*
             ${PRJ_NAME}_ERC_*
             
+      - name: Archive outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${PRJ_NAME}_outputs
+          files: |
+            ${PRJ_NAME}_Schematic_*.pdf
+            ${PRJ_NAME}_Placement_*.pdf
+            ${PRJ_NAME}_Bom_*.csv
+
       - name: Release
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/rev_*')
