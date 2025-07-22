@@ -8,6 +8,9 @@ on:
     branches:
       - main
 
+env:
+    PRJ_NAME: ShiftLight
+
 jobs:
   check_and_export:
     runs-on: ubuntu-22.04
@@ -25,13 +28,13 @@ jobs:
         working-directory: src
         run: |
           HW_REV=$(git describe --tags)
-          kicad-cli sch erc SerialTempSens.kicad_sch -o SerialTempSens_ERC_${HW_REV}
+          kicad-cli sch erc ${PRJ_NAME}.kicad_sch -o ${PRJ_NAME}_ERC_${HW_REV}
 
       - name: DRC
         working-directory: src
         run: |
           HW_REV=$(git describe --tags)
-          kicad-cli pcb drc SerialTempSens.kicad_pcb -o SerialTempSens_DRC_${HW_REV}
+          kicad-cli pcb drc ${PRJ_NAME}.kicad_pcb -o ${PRJ_NAME}_DRC_${HW_REV}
 
       - name: Export outputs
         working-directory: src
@@ -39,25 +42,25 @@ jobs:
           sudo apt update
           sudo apt install -y ghostscript
           HW_REV=$(git describe --tags)
-          kicad-cli sch export pdf SerialTempSens.kicad_sch -o SerialTempSens_Schematic_${HW_REV}.pdf
-          kicad-cli sch export bom --fields 'Reference,Value,${QUANTITY}' --exclude-dnp --group-by "Value" SerialTempSens.kicad_sch -o SerialTempSens_Bom_${HW_REV}.pdf
-          kicad-cli pcb export pdf -l F.Fab,Edge.Cuts SerialTempSens.kicad_pcb -o top.pdf
-          kicad-cli pcb export pdf -l B.Fab,Edge.Cuts --mirror SerialTempSens.kicad_pcb -o bot.pdf
-          gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -sOutputFile=SerialTempSens_Placement_${HW_REV}.pdf top.pdf bot.pdf
+          kicad-cli sch export pdf ${PRJ_NAME}.kicad_sch -o ${PRJ_NAME}_Schematic_${HW_REV}.pdf
+          kicad-cli sch export bom --fields 'Reference,Value,${QUANTITY}' --exclude-dnp --group-by "Value" ${PRJ_NAME}.kicad_sch -o ${PRJ_NAME}_Bom_${HW_REV}.pdf
+          kicad-cli pcb export pdf -l F.Fab,Edge.Cuts ${PRJ_NAME}.kicad_pcb -o top.pdf
+          kicad-cli pcb export pdf -l B.Fab,Edge.Cuts --mirror ${PRJ_NAME}.kicad_pcb -o bot.pdf
+          gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -sOutputFile=${PRJ_NAME}_Placement_${HW_REV}.pdf top.pdf bot.pdf
           
       - name: Archive reports
         uses: actions/upload-artifact@v4
         with:
-          name: SerialTempSens_reports
+          name: ${PRJ_NAME}_reports
           path: |
-            SerialTempSens_DRC_*
-            SerialTempSens_ERC_*
+            ${PRJ_NAME}_DRC_*
+            ${PRJ_NAME}_ERC_*
             
       - name: Release
         uses: softprops/action-gh-release@v2
-        if: startsWith(github.ref, 'refs/tags/v')
+        if: startsWith(github.ref, 'refs/tags/rev_*')
         with:
           files: |
-            SerialTempSens_Schematic_*.pdf
-            SerialTempSens_Placement_*.pdf
-            SerialTempSens_Bom_*.csv
+            ${PRJ_NAME}_Schematic_*.pdf
+            ${PRJ_NAME}_Placement_*.pdf
+            ${PRJ_NAME}_Bom_*.csv
