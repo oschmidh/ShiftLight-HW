@@ -33,7 +33,6 @@ jobs:
       - name: DRC
         working-directory: src
         run: |
-          HW_REV=$(git describe --tags --always)
           kicad-cli pcb drc ${PRJ_NAME}.kicad_pcb -o ${PRJ_NAME}_DRC_${HW_REV}
 
       - name: Export outputs
@@ -41,9 +40,8 @@ jobs:
         run: |
           sudo apt update
           sudo apt install -y ghostscript
-          HW_REV=$(git describe --tags --always)
           kicad-cli sch export pdf ${PRJ_NAME}.kicad_sch -o ${PRJ_NAME}_Schematic_${HW_REV}.pdf
-          kicad-cli sch export bom --fields 'Reference,Value,${QUANTITY}' --exclude-dnp --group-by "Value" ${PRJ_NAME}.kicad_sch -o ${PRJ_NAME}_Bom_${HW_REV}.pdf
+          kicad-cli sch export bom --fields 'Reference,Value,${QUANTITY}' --exclude-dnp --group-by "Value" ${PRJ_NAME}.kicad_sch -o ${PRJ_NAME}_Bom_${HW_REV}.csv
           kicad-cli pcb export pdf -l F.Fab,Edge.Cuts ${PRJ_NAME}.kicad_pcb -o top.pdf
           kicad-cli pcb export pdf -l B.Fab,Edge.Cuts --mirror ${PRJ_NAME}.kicad_pcb -o bot.pdf
           gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -sOutputFile=${PRJ_NAME}_Placement_${HW_REV}.pdf top.pdf bot.pdf
@@ -51,7 +49,7 @@ jobs:
       - name: Archive reports
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ env.PRJ_NAME }}_reports
+          name: ${{ env.PRJ_NAME }}_reports_${{ env.HW_REV }}
           path: |
             src/${{ env.PRJ_NAME }}_DRC_*
             src/${{ env.PRJ_NAME }}_ERC_*
@@ -59,7 +57,7 @@ jobs:
       - name: Archive outputs
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ env.PRJ_NAME }}_outputs
+          name: ${{ env.PRJ_NAME }}_outputs_${{ env.HW_REV }}
           path: |
             src/${{ env.PRJ_NAME }}_Schematic_*.pdf
             src/${{ env.PRJ_NAME }}_Placement_*.pdf
