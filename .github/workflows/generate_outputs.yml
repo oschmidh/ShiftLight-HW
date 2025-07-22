@@ -27,13 +27,13 @@ jobs:
       - name: ERC
         working-directory: src
         run: |
-          HW_REV=$(git describe --tags)
+          HW_REV=$(git describe --tags --always)
           kicad-cli sch erc ${PRJ_NAME}.kicad_sch -o ${PRJ_NAME}_ERC_${HW_REV}
 
       - name: DRC
         working-directory: src
         run: |
-          HW_REV=$(git describe --tags)
+          HW_REV=$(git describe --tags --always)
           kicad-cli pcb drc ${PRJ_NAME}.kicad_pcb -o ${PRJ_NAME}_DRC_${HW_REV}
 
       - name: Export outputs
@@ -41,7 +41,7 @@ jobs:
         run: |
           sudo apt update
           sudo apt install -y ghostscript
-          HW_REV=$(git describe --tags)
+          HW_REV=$(git describe --tags --always)
           kicad-cli sch export pdf ${PRJ_NAME}.kicad_sch -o ${PRJ_NAME}_Schematic_${HW_REV}.pdf
           kicad-cli sch export bom --fields 'Reference,Value,${QUANTITY}' --exclude-dnp --group-by "Value" ${PRJ_NAME}.kicad_sch -o ${PRJ_NAME}_Bom_${HW_REV}.pdf
           kicad-cli pcb export pdf -l F.Fab,Edge.Cuts ${PRJ_NAME}.kicad_pcb -o top.pdf
