@@ -60,7 +60,7 @@ jobs:
           sudo apt update
           sudo apt install -y ghostscript
           kicad-cli sch export pdf -D PROJECTNAME=${PRJ_NAME} -D REVISION=${{ env.HW_REV }} -D ISSUE_DATE=$(date +"%d.%m.%Y") ${PRJ_NAME}.kicad_sch -o ${PRJ_NAME}_Schematic_${{ env.HW_REV }}.pdf
-          kicad-cli sch export bom --fields 'Reference,Value,${QUANTITY}' --exclude-dnp --group-by "Value" ${PRJ_NAME}.kicad_sch -o ${PRJ_NAME}_Bom_${{ env.HW_REV }}.csv
+          kicad-cli sch export bom --fields 'Reference,Value,${QUANTITY}' --exclude-dnp --group-by "Value" --field-delimiter ";" ${PRJ_NAME}.kicad_sch -o ${PRJ_NAME}_Bom_${{ env.HW_REV }}.csv
           kicad-cli pcb export pdf -l F.Fab,Edge.Cuts ${PRJ_NAME}.kicad_pcb -o top.pdf
           kicad-cli pcb export pdf -l B.Fab,Edge.Cuts --mirror ${PRJ_NAME}.kicad_pcb -o bot.pdf
           gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -sOutputFile=${PRJ_NAME}_Placement_${{ env.HW_REV }}.pdf top.pdf bot.pdf
