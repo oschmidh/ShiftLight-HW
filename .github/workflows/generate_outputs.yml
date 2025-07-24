@@ -30,6 +30,7 @@ jobs:
 
       - name: ERC
         id: erc
+        if: '!cancelled()'
         working-directory: src
         run: |
           kicad-cli sch erc \
@@ -39,6 +40,7 @@ jobs:
 
       - name: DRC
         id: drc
+        if: '!cancelled()'
         working-directory: src
         run: |
           kicad-cli pcb drc \
