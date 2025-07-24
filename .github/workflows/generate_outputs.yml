@@ -61,6 +61,14 @@ jobs:
           kicad-cli pcb export pdf -l F.Fab,Edge.Cuts ${PRJ_NAME}.kicad_pcb -o top.pdf
           kicad-cli pcb export pdf -l B.Fab,Edge.Cuts --mirror ${PRJ_NAME}.kicad_pcb -o bot.pdf
           gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -sOutputFile=${PRJ_NAME}_Placement_${{ env.HW_REV }}.pdf top.pdf bot.pdf
+          mkdir gerbers
+          kicad-cli pcb export gerbers \
+            -o gerbers \
+            -l F.Cu,B.Cu,F.Paste,B.Paste,F.Silkscreen,B.Silkscreen,F.Mask,B.Mask,Edge.Cuts \
+            --no-protel-ext \
+            --subtract-soldermask \
+            ${PRJ_NAME}.kicad_pcb
+          zip -j ${PRJ_NAME}_Gerber_${{ env.HW_REV }}.zip gerbers/*
 
       - name: Archive ERC report
         uses: actions/upload-artifact@v4
@@ -85,6 +93,7 @@ jobs:
             ${{ env.PRJ_NAME }}_Schematic_*.pdf
             ${{ env.PRJ_NAME }}_Placement_*.pdf
             ${{ env.PRJ_NAME }}_Bom_*.csv
+            ${{ env.PRJ_NAME }}_Gerber_*.zip
 
       - name: Release
         uses: softprops/action-gh-release@v2
@@ -94,3 +103,4 @@ jobs:
             ${{ env.PRJ_NAME }}_Schematic_*.pdf
             ${{ env.PRJ_NAME }}_Placement_*.pdf
             ${{ env.PRJ_NAME }}_Bom_*.csv
+            ${{ env.PRJ_NAME }}_Gerber_*.zip
