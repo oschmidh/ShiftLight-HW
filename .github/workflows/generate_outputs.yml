@@ -68,7 +68,6 @@ jobs:
           kicad-cli pcb export gerbers \
             -o gerbers \
             -l F.Cu,B.Cu,F.Paste,B.Paste,F.Silkscreen,B.Silkscreen,F.Mask,B.Mask,Edge.Cuts \
-            --no-protel-ext \
             --subtract-soldermask \
             ${PRJ_NAME}.kicad_pcb
           zip -j ${PRJ_NAME}_Gerber_${{ env.HW_REV }}.zip gerbers/*
