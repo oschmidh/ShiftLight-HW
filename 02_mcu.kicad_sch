@@ -2647,7 +2647,7 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 132.08) (xy 105.41 132.08)
+			(xy 50.8 132.08) (xy 118.11 132.08)
 		)
 		(stroke
 			(width 0)
@@ -2687,6 +2687,16 @@
 	)
 	(wire
 		(pts
+			(xy 118.11 72.39) (xy 118.11 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "15aa88ca-e791-40be-ba3f-66c082b72e43")
+	)
+	(wire
+		(pts
 			(xy 213.36 85.09) (xy 213.36 92.71)
 		)
 		(stroke
@@ -2707,7 +2717,7 @@
 	)
 	(wire
 		(pts
-			(xy 87.63 74.93) (xy 105.41 74.93)
+			(xy 87.63 74.93) (xy 115.57 74.93)
 		)
 		(stroke
 			(width 0)
@@ -2847,7 +2857,7 @@
 	)
 	(wire
 		(pts
-			(xy 48.26 134.62) (xy 105.41 134.62)
+			(xy 48.26 134.62) (xy 115.57 134.62)
 		)
 		(stroke
 			(width 0)
@@ -3127,6 +3137,16 @@
 	)
 	(wire
 		(pts
+			(xy 115.57 74.93) (xy 115.57 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6ff0595e-e30e-4de0-8b7a-bbd949978221")
+	)
+	(wire
+		(pts
 			(xy 87.63 57.15) (xy 90.17 57.15)
 		)
 		(stroke
@@ -3347,7 +3367,7 @@
 	)
 	(wire
 		(pts
-			(xy 95.25 69.85) (xy 105.41 69.85)
+			(xy 95.25 69.85) (xy 120.65 69.85)
 		)
 		(stroke
 			(width 0)
@@ -3627,7 +3647,7 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 129.54) (xy 105.41 129.54)
+			(xy 93.98 129.54) (xy 120.65 129.54)
 		)
 		(stroke
 			(width 0)
@@ -3677,6 +3697,16 @@
 	)
 	(wire
 		(pts
+			(xy 120.65 69.85) (xy 120.65 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e00bc0fe-24de-467b-b23c-f2438ba5e4f2")
+	)
+	(wire
+		(pts
 			(xy 181.61 87.63) (xy 181.61 90.17)
 		)
 		(stroke
@@ -3687,7 +3717,7 @@
 	)
 	(wire
 		(pts
-			(xy 87.63 72.39) (xy 105.41 72.39)
+			(xy 87.63 72.39) (xy 118.11 72.39)
 		)
 		(stroke
 			(width 0)
@@ -3847,6 +3877,17 @@
 		)
 		(uuid "3916d2fd-189a-4b6e-b753-2e52774c0196")
 	)
+	(text "nRST"
+		(exclude_from_sim no)
+		(at 29.845 130.175 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4ab395f1-5327-433e-b1af-0f2dd1c6b505")
+	)
 	(text "MCU"
 		(exclude_from_sim no)
 		(at 72.136 39.116 0)
@@ -3859,15 +3900,48 @@
 		)
 		(uuid "88526a17-e4df-44a5-992d-2e61c987d76f")
 	)
-	(text "nRST pull-up is shared with I2C"
+	(text "SWCLK"
 		(exclude_from_sim no)
-		(at 97.028 124.46 0)
+		(at 29.845 135.255 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "98f7bbff-e3a1-4580-acf7-e34bad8f5da5")
+	)
+	(text "3V3"
+		(exclude_from_sim no)
+		(at 29.845 127.635 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a0d349c5-2d9a-4bf0-bee5-9b3ecc07727b")
+	)
+	(text "nRST pin is shared with I2c_SCL"
+		(exclude_from_sim no)
+		(at 97.79 128.27 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 		)
 		(uuid "ad7c5a36-4c9b-48ce-8e9f-54fc16906b73")
+	)
+	(text "GND"
+		(exclude_from_sim no)
+		(at 29.845 137.795 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ae7e9984-0121-400f-b254-c1c66d0e1928")
 	)
 	(text "Yellow"
 		(exclude_from_sim no)
@@ -3901,6 +3975,17 @@
 		)
 		(uuid "d52d07c7-459f-47c3-a1e2-e8ae0cb78cbe")
 	)
+	(text "SWDIO"
+		(exclude_from_sim no)
+		(at 29.845 132.715 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e2c30847-4fe4-4915-ad6c-b1fb656ffeff")
+	)
 	(text "DEBUG"
 		(exclude_from_sim no)
 		(at 71.12 114.935 0)
@@ -3914,17 +3999,6 @@
 		)
 		(uuid "eb591a14-70aa-4b94-85c6-59a32c77432a")
 	)
-	(label "SWCLK"
-		(at 99.06 74.93 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "0c3c6281-38cb-437d-ab9b-1d6db26da4d5")
-	)
 	(label "I2C_SCL"
 		(at 116.84 57.15 0)
 		(fields_autoplaced yes)
@@ -3936,17 +4010,6 @@
 		)
 		(uuid "17204b8d-d24e-4fdb-afac-773a9ff39d9e")
 	)
-	(label "nRST"
-		(at 99.06 69.85 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "26531b87-d298-4ad8-b6aa-79e8bc686d59")
-	)
 	(label "I2C_SDA"
 		(at 176.53 152.4 0)
 		(fields_autoplaced yes)
@@ -3957,17 +4020,6 @@
 			(justify left bottom)
 		)
 		(uuid "4f9fcb79-fead-4f92-8f61-9b021bede040")
-	)
-	(label "SWDIO"
-		(at 99.06 72.39 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "522eb568-effc-49a8-9e41-3ee8a0de0ef8")
 	)
 	(label "SWDIO"
 		(at 105.41 132.08 180)
@@ -4023,17 +4075,6 @@
 			(justify right bottom)
 		)
 		(uuid "f2106718-559a-4234-9f99-d71e6e3b0829")
-	)
-	(label "nRST"
-		(at 105.41 129.54 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "f6b1ae0b-1b68-458d-be54-6965a4a6bd4b")
 	)
 	(label "I2C_SCL"
 		(at 176.53 149.86 0)
@@ -5740,7 +5781,7 @@
 		(dnp no)
 		(uuid "7b2e634f-2a3b-40f2-a248-2f5bef2c08e5")
 		(property "Reference" "J2"
-			(at 28.575 128.27 0)
+			(at 32.385 140.335 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5748,7 +5789,7 @@
 			)
 		)
 		(property "Value" "0533980571"
-			(at 24.13 130.81 0)
+			(at 27.94 142.875 0)
 			(effects
 				(font
 					(size 1.27 1.27)
