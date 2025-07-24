@@ -37,21 +37,21 @@ jobs:
           mkdir -p $HOME/.config
           cp -r /home/kicad/.config/kicad $HOME/.config/
           kicad-cli sch erc \
-            ${PRJ_NAME}.kicad_sch \
+            -o ${PRJ_NAME}_ERC_${{ env.HW_REV }}.report \
             -D PROJECTNAME=${PRJ_NAME} \
             -D REVISION=${{ env.HW_REV }} \
             -D ISSUE_DATE=$(date +"%d.%m.%Y") \
-            -o ${PRJ_NAME}_ERC_${{ env.HW_REV }}.report \
-            --exit-code-violations
+            --exit-code-violations \
+            ${PRJ_NAME}.kicad_sch
 
       - name: DRC
         id: drc
         if: '!cancelled()'
         run: |
           kicad-cli pcb drc \
-            ${PRJ_NAME}.kicad_pcb \
             -o ${PRJ_NAME}_DRC_${{ env.HW_REV }}.report \
-            --exit-code-violations
+            --exit-code-violations \
+            ${PRJ_NAME}.kicad_pcb
 
       - name: Export outputs
         id: outputs
@@ -59,11 +59,41 @@ jobs:
         run: |
           sudo apt update
           sudo apt install -y ghostscript
-          kicad-cli sch export pdf -D PROJECTNAME=${PRJ_NAME} -D REVISION=${{ env.HW_REV }} -D ISSUE_DATE=$(date +"%d.%m.%Y") ${PRJ_NAME}.kicad_sch -o ${PRJ_NAME}_Schematic_${{ env.HW_REV }}.pdf
-          kicad-cli sch export bom --fields 'Reference,Value,${QUANTITY}' --exclude-dnp --group-by "Value" --field-delimiter ";" ${PRJ_NAME}.kicad_sch -o ${PRJ_NAME}_Bom_${{ env.HW_REV }}.csv
-          kicad-cli pcb export pdf -l F.Fab,Edge.Cuts ${PRJ_NAME}.kicad_pcb -o top.pdf
-          kicad-cli pcb export pdf -l B.Fab,Edge.Cuts --mirror ${PRJ_NAME}.kicad_pcb -o bot.pdf
-          gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -sOutputFile=${PRJ_NAME}_Placement_${{ env.HW_REV }}.pdf top.pdf bot.pdf
+
+          kicad-cli sch export pdf \
+            -o ${PRJ_NAME}_Schematic_${{ env.HW_REV }}.pdf \
+            -D PROJECTNAME=${PRJ_NAME} \
+            -D REVISION=${{ env.HW_REV }} \
+            -D ISSUE_DATE=$(date +"%d.%m.%Y") \
+            ${PRJ_NAME}.kicad_sch
+
+          kicad-cli sch export bom \
+            -o ${PRJ_NAME}_Bom_${{ env.HW_REV }}.csv \
+            --fields 'Reference,Value,${QUANTITY}' \
+            --exclude-dnp \
+            --group-by "Value" \
+            --field-delimiter ";" \
+            ${PRJ_NAME}.kicad_sch
+
+          kicad-cli pcb export pdf \
+            -o top.pdf \
+            -l F.Fab,Edge.Cuts \
+            ${PRJ_NAME}.kicad_pcb
+          kicad-cli pcb export pdf \
+            -o bot.pdf \
+            -l B.Fab,Edge.Cuts \
+            --mirror \
+            ${PRJ_NAME}.kicad_pcb
+          gs \
+            -dBATCH \
+            -dNOPAUSE \
+            -q \
+            -sDEVICE=pdfwrite \
+            -dPDFSETTINGS=/prepress \
+            -sOutputFile=${PRJ_NAME}_Placement_${{ env.HW_REV }}.pdf \
+            top.pdf \
+            bot.pdf
+
           mkdir gerbers
           kicad-cli pcb export gerbers \
             -o gerbers \
