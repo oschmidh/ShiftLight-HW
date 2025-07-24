@@ -24,10 +24,11 @@ jobs:
           fetch-depth: 0
           submodules: true
 
+      - name: Mark repository as safe
+        run: git config --global --add safe.directory $GITHUB_WORKSPACE
+
       - name: Set version variable
-        run: |
-          git config --global --add safe.directory .
-          echo "HW_REV=$(git describe --tags --always)" >> $GITHUB_ENV
+        run: echo "HW_REV=$(git describe --tags --always)" >> $GITHUB_ENV
 
       - name: ERC
         id: erc
