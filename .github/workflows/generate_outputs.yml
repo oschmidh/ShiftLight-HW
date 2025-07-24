@@ -26,6 +26,7 @@ jobs:
           submodules: true
 
       - name: Set version variable
+        working-directory: src
         run: echo "HW_REV=$(git describe --tags --always)" >> $GITHUB_ENV
 
       - name: ERC
@@ -33,9 +34,11 @@ jobs:
         if: '!cancelled()'
         working-directory: src
         run: |
+          mkdir -p $HOME/.config
+          cp -r /home/kicad/.config/kicad $HOME/.config/
           kicad-cli sch erc \
             ${PRJ_NAME}.kicad_sch \
-            -o ${PRJ_NAME}_ERC_${{ env.HW_REV }} \
+            -o ${PRJ_NAME}_ERC_${{ env.HW_REV }}.report \
             --exit-code-violations
 
       - name: DRC
@@ -45,7 +48,7 @@ jobs:
         run: |
           kicad-cli pcb drc \
             ${PRJ_NAME}.kicad_pcb \
-            -o ${PRJ_NAME}_DRC_${{ env.HW_REV }} \
+            -o ${PRJ_NAME}_DRC_${{ env.HW_REV }}.report \
             --exit-code-violations
 
       - name: Export outputs
@@ -65,15 +68,17 @@ jobs:
         uses: actions/upload-artifact@v4
         if: ${{ failure() && steps.erc.conclusion == 'failure' }}
         with:
+          name: ${{ env.PRJ_NAME }}_ERC_${{ env.HW_REV }}.report
           path: |
-            src/${{ env.PRJ_NAME }}_ERC_*
+            src/${{ env.PRJ_NAME }}_ERC_*.report
 
       - name: Archive DRC report
         uses: actions/upload-artifact@v4
         if: ${{ failure() && steps.drc.conclusion == 'failure' }}
         with:
+          name: ${{ env.PRJ_NAME }}_DRC_${{ env.HW_REV }}.report
           path: |
-            src/${{ env.PRJ_NAME }}_DRC_*
+            src/${{ env.PRJ_NAME }}_DRC_*.report
 
       - name: Archive outputs
         uses: actions/upload-artifact@v4
