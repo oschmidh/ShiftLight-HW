@@ -25,7 +25,9 @@ jobs:
           submodules: true
 
       - name: Set version variable
-        run: echo "HW_REV=$(git describe --tags --always)" >> $GITHUB_ENV
+        run: |
+          git config --global --add safe.directory .
+          echo "HW_REV=$(git describe --tags --always)" >> $GITHUB_ENV
 
       - name: ERC
         id: erc
