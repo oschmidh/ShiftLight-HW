@@ -32,6 +32,7 @@ jobs:
         if: '!cancelled()'
         run: |
           mkdir -p $HOME/.config
+          cp -r /home/kicad/.config/kicad $HOME/.config/
           kicad-cli sch erc \
             ${PRJ_NAME}.kicad_sch \
             -o ${PRJ_NAME}_ERC_${{ env.HW_REV }}.report \
@@ -63,16 +64,14 @@ jobs:
         if: ${{ failure() && steps.erc.conclusion == 'failure' }}
         with:
           name: ${{ env.PRJ_NAME }}_ERC_${{ env.HW_REV }}.report
-          path: |
-            ${{ env.PRJ_NAME }}_ERC_*.report
+          path: ${{ env.PRJ_NAME }}_ERC_*.report
 
       - name: Archive DRC report
         uses: actions/upload-artifact@v4
         if: ${{ failure() && steps.drc.conclusion == 'failure' }}
         with:
           name: ${{ env.PRJ_NAME }}_DRC_${{ env.HW_REV }}.report
-          path: |
-            ${{ env.PRJ_NAME }}_DRC_*.report
+          path: ${{ env.PRJ_NAME }}_DRC_*.report
 
       - name: Archive outputs
         uses: actions/upload-artifact@v4
