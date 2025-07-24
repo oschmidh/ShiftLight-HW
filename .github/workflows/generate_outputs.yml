@@ -21,21 +21,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          path: src
           fetch-depth: 0
           submodules: true
 
       - name: Set version variable
-        working-directory: src
         run: echo "HW_REV=$(git describe --tags --always)" >> $GITHUB_ENV
 
       - name: ERC
         id: erc
         if: '!cancelled()'
-        working-directory: src
         run: |
           mkdir -p $HOME/.config
-          cp -r /home/kicad/.config/kicad $HOME/.config/
           kicad-cli sch erc \
             ${PRJ_NAME}.kicad_sch \
             -o ${PRJ_NAME}_ERC_${{ env.HW_REV }}.report \
@@ -44,7 +40,6 @@ jobs:
       - name: DRC
         id: drc
         if: '!cancelled()'
-        working-directory: src
         run: |
           kicad-cli pcb drc \
             ${PRJ_NAME}.kicad_pcb \
@@ -54,7 +49,6 @@ jobs:
       - name: Export outputs
         id: outputs
         if: '!cancelled()'
-        working-directory: src
         run: |
           sudo apt update
           sudo apt install -y ghostscript
@@ -70,7 +64,7 @@ jobs:
         with:
           name: ${{ env.PRJ_NAME }}_ERC_${{ env.HW_REV }}.report
           path: |
-            src/${{ env.PRJ_NAME }}_ERC_*.report
+            ${{ env.PRJ_NAME }}_ERC_*.report
 
       - name: Archive DRC report
         uses: actions/upload-artifact@v4
@@ -78,7 +72,7 @@ jobs:
         with:
           name: ${{ env.PRJ_NAME }}_DRC_${{ env.HW_REV }}.report
           path: |
-            src/${{ env.PRJ_NAME }}_DRC_*.report
+            ${{ env.PRJ_NAME }}_DRC_*.report
 
       - name: Archive outputs
         uses: actions/upload-artifact@v4
@@ -86,15 +80,15 @@ jobs:
         with:
           name: ${{ env.PRJ_NAME }}_outputs_${{ env.HW_REV }}
           path: |
-            src/${{ env.PRJ_NAME }}_Schematic_*.pdf
-            src/${{ env.PRJ_NAME }}_Placement_*.pdf
-            src/${{ env.PRJ_NAME }}_Bom_*.csv
+            ${{ env.PRJ_NAME }}_Schematic_*.pdf
+            ${{ env.PRJ_NAME }}_Placement_*.pdf
+            ${{ env.PRJ_NAME }}_Bom_*.csv
 
       - name: Release
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/rev_*')
         with:
           files: |
-            src/${{ env.PRJ_NAME }}_Schematic_*.pdf
-            src/${{ env.PRJ_NAME }}_Placement_*.pdf
-            src/${{ env.PRJ_NAME }}_Bom_*.csv
+            ${{ env.PRJ_NAME }}_Schematic_*.pdf
+            ${{ env.PRJ_NAME }}_Placement_*.pdf
+            ${{ env.PRJ_NAME }}_Bom_*.csv
