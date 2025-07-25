@@ -69,10 +69,9 @@ jobs:
 
           kicad-cli sch export bom \
             -o ${PRJ_NAME}_Bom_${{ env.HW_REV }}.csv \
-            --fields 'Reference,Value,${QUANTITY}' \
+            --fields 'Reference,Value,DigiKey PN,${QUANTITY}' \
             --exclude-dnp \
-            --group-by "Value" \
-            --field-delimiter ";" \
+            --group-by "DigiKey PN" \
             ${PRJ_NAME}.kicad_sch
 
           kicad-cli pcb export pdf \
