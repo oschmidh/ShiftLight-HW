@@ -3617,7 +3617,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" ""
+		(property "MPN" "0533980471"
 			(at 40.64 39.37 0)
 			(effects
 				(font
@@ -3627,6 +3627,15 @@
 			)
 		)
 		(property "No_BOM" ""
+			(at 40.64 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey PN" "WM7608CT-ND"
 			(at 40.64 39.37 0)
 			(effects
 				(font
@@ -3881,7 +3890,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" ""
+		(property "MPN" "HMK105B7103KVHFE"
 			(at 90.17 87.63 0)
 			(effects
 				(font
@@ -3906,6 +3915,15 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+			)
+		)
+		(property "DigiKey PN" "587-HMK105B7103KVHFECT-ND"
+			(at 90.17 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -4061,7 +4079,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" ""
+		(property "MPN" "CL05B104KA5NNNC"
 			(at 68.58 144.78 0)
 			(effects
 				(font
@@ -4071,6 +4089,15 @@
 			)
 		)
 		(property "No_BOM" ""
+			(at 68.58 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey PN" "1276-6720-1-ND"
 			(at 68.58 144.78 0)
 			(effects
 				(font
@@ -4399,7 +4426,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" ""
+		(property "MPN" "CL05B104KA5NNNC"
 			(at 160.02 152.4 0)
 			(effects
 				(font
@@ -4409,6 +4436,15 @@
 			)
 		)
 		(property "No_BOM" ""
+			(at 160.02 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey PN" "1276-6720-1-ND"
 			(at 160.02 152.4 0)
 			(effects
 				(font
@@ -4560,6 +4596,33 @@
 			)
 		)
 		(property "Description" "60V, 1A low Vf MEGA Schottky barrier rectifier, SOD-123W"
+			(at 92.71 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "PMEG6010ER,115"
+			(at 92.71 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "No_BOM" ""
+			(at 92.71 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey PN" "1727-5846-1-ND"
 			(at 92.71 34.29 0)
 			(effects
 				(font
@@ -4720,7 +4783,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" ""
+		(property "MPN" "RC0402FR-071K8L"
 			(at 106.68 78.74 0)
 			(effects
 				(font
@@ -4730,6 +4793,15 @@
 			)
 		)
 		(property "No_BOM" ""
+			(at 106.68 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey PN" "311-1.80KLRCT-ND"
 			(at 106.68 78.74 0)
 			(effects
 				(font
@@ -4808,7 +4880,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" ""
+		(property "MPN" "RC0402FR-075K6L"
 			(at 170.18 77.47 0)
 			(effects
 				(font
@@ -4818,6 +4890,15 @@
 			)
 		)
 		(property "No_BOM" ""
+			(at 170.18 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey PN" "311-5.6KLRCT-ND"
 			(at 170.18 77.47 0)
 			(effects
 				(font
@@ -4887,6 +4968,33 @@
 			)
 		)
 		(property "Description" ""
+			(at 90.17 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "LMR51406YDBV"
+			(at 90.17 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "No_BOM" ""
+			(at 90.17 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey PN" "296-LMR51406YDBVRCT-ND"
 			(at 90.17 142.24 0)
 			(effects
 				(font
@@ -5256,6 +5364,15 @@
 				(justify left)
 			)
 		)
+		(property "DigiKey PN" "1276-6733-1-ND"
+			(at 113.03 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "b587139d-1b65-4e24-a75f-84ea8f78c32b")
 		)
@@ -5325,7 +5442,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" ""
+		(property "MPN" "CL05B104KA5NNNC"
 			(at 102.87 143.51 0)
 			(effects
 				(font
@@ -5335,6 +5452,15 @@
 			)
 		)
 		(property "No_BOM" ""
+			(at 102.87 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey PN" "1276-6720-1-ND"
 			(at 102.87 143.51 0)
 			(effects
 				(font
@@ -5411,7 +5537,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" ""
+		(property "MPN" "BLM15PX601SZ1D"
 			(at 153.67 147.32 0)
 			(effects
 				(font
@@ -5421,6 +5547,15 @@
 			)
 		)
 		(property "No_BOM" ""
+			(at 153.67 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey PN" "490-16655-1-ND"
 			(at 153.67 147.32 0)
 			(effects
 				(font
@@ -5590,6 +5725,15 @@
 			)
 		)
 		(property "No_BOM" ""
+			(at 113.03 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey PN" "445-VLS3015CX-150M-HCT-ND"
 			(at 113.03 147.32 0)
 			(effects
 				(font
@@ -5851,6 +5995,15 @@
 				(hide yes)
 			)
 		)
+		(property "DigiKey PN" "1276-CL31B475KBHVPJECT-ND"
+			(at 63.5 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "eadffa31-fe9d-4078-932d-d1c246b0a73b")
 		)
@@ -5914,6 +6067,33 @@
 			)
 		)
 		(property "Description" "Optocoupler, Phototransistor Output, Low Input Current, SSOP-4"
+			(at 154.94 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "VOS618A-3X001T"
+			(at 154.94 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "No_BOM" ""
+			(at 154.94 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey PN" "VOS618A-3X001TCT-ND"
 			(at 154.94 85.09 0)
 			(effects
 				(font
@@ -6045,7 +6225,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100k"
+		(property "Value" "68k"
 			(at 115.57 153.67 0)
 			(effects
 				(font
@@ -6081,7 +6261,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" ""
+		(property "MPN" "RC0402FR-0768KL"
 			(at 121.92 152.4 0)
 			(effects
 				(font
@@ -6091,6 +6271,15 @@
 			)
 		)
 		(property "No_BOM" ""
+			(at 121.92 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey PN" "311-68.0KLRCT-ND"
 			(at 121.92 152.4 0)
 			(effects
 				(font
@@ -6168,7 +6357,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" ""
+		(property "MPN" "HMK105B7103KVHFE"
 			(at 85.09 83.82 0)
 			(effects
 				(font
@@ -6193,6 +6382,15 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+			)
+		)
+		(property "DigiKey PN" "587-HMK105B7103KVHFECT-ND"
+			(at 85.09 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -6372,6 +6570,15 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+			)
+		)
+		(property "DigiKey PN" "1276-6733-1-ND"
+			(at 107.95 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -6775,7 +6982,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "32k"
+		(property "Value" "22k"
 			(at 115.824 161.417 0)
 			(effects
 				(font
@@ -6811,7 +7018,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" ""
+		(property "MPN" "RC0402FR-0722KL"
 			(at 121.92 160.02 0)
 			(effects
 				(font
@@ -6821,6 +7028,15 @@
 			)
 		)
 		(property "No_BOM" ""
+			(at 121.92 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey PN" "311-22.0KLRCT-ND"
 			(at 121.92 160.02 0)
 			(effects
 				(font
@@ -6899,6 +7115,33 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "SMAJ30CA"
+			(at 80.01 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey PN" "SMAJ30CALFCT-ND"
+			(at 80.01 40.64 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "No_BOM" ""
+			(at 80.01 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "b5b07b2b-3638-4e2e-bd08-e81022a00768")
 		)
@@ -6967,7 +7210,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" ""
+		(property "MPN" "F0603G0R15FNTR"
 			(at 64.77 34.29 0)
 			(effects
 				(font
@@ -6976,7 +7219,25 @@
 				(hide yes)
 			)
 		)
+		(property "Mouser No" "581-F0603G0R15FNTR"
+			(at 64.77 34.29 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(property "No_BOM" ""
+			(at 64.77 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey PN" "478-F0603G0R15FNCT-ND"
 			(at 64.77 34.29 0)
 			(effects
 				(font
@@ -7047,6 +7308,33 @@
 			)
 		)
 		(property "Description" ""
+			(at 118.11 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "VESD05B1-02V-G3-08"
+			(at 118.11 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "No_BOM" ""
+			(at 118.11 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey PN" "VESD05B1-02V-G3-08GICT-ND"
 			(at 118.11 85.09 0)
 			(effects
 				(font
@@ -7367,6 +7655,15 @@
 			)
 		)
 		(property "No_BOM" ""
+			(at 129.54 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DigiKey PN" "1276-1804-1-ND"
 			(at 129.54 156.21 0)
 			(effects
 				(font
