@@ -3830,7 +3830,7 @@
 		)
 		(uuid "ff883b12-32f7-49cb-a44e-80b463b26f72")
 	)
-	(text "I2C addr: 0x40"
+	(text "I2C addr: 0x20"
 		(exclude_from_sim no)
 		(at 182.245 100.965 0)
 		(effects
@@ -3839,6 +3839,16 @@
 			)
 		)
 		(uuid "0b03bee6-b662-4c61-a6e9-2a23d5d4a35f")
+	)
+	(text "I2C addr: 0x10"
+		(exclude_from_sim no)
+		(at 147.32 159.385 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "12cf4db5-fdcf-461a-9741-e22ea145ed2b")
 	)
 	(text "Green\n"
 		(exclude_from_sim no)
