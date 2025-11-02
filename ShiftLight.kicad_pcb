@@ -17790,7 +17790,7 @@
 		(layer "Edge.Cuts")
 		(uuid "ca4ac8b8-5c28-4ae1-929b-243d2af6663a")
 	)
-	(gr_text "PCB rev. A"
+	(gr_text "PCB rev. B"
 		(at 104.013 77.597 0)
 		(layer "F.Cu")
 		(uuid "75be31b2-3978-4802-b72e-e2acef77cafb")
