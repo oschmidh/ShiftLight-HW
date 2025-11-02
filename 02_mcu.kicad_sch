@@ -1469,7 +1469,7 @@
 					)
 				)
 			)
-			(property "Footprint" "Package_TO_SOT_SMD:SOT-323_SC-70"
+			(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 				(at 7.62 2.54 0)
 				(effects
 					(font
@@ -1487,7 +1487,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Microprocessor Reset (active-low) Circuit, SOT-323"
+			(property "Description" "Microprocessor Reset (active-low) Circuit, SOT-23"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1516,8 +1516,8 @@
 			)
 			(symbol "TLV803ExxxDBZ_0_1"
 				(rectangle
-					(start 5.08 7.62)
-					(end -5.08 -7.62)
+					(start -5.08 7.62)
+					(end 5.08 -7.62)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -6946,7 +6946,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-323_SC-70"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 90.17 152.4 0)
 			(effects
 				(font
@@ -6964,7 +6964,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Microprocessor Reset (active-low) Circuit, SOT-323"
+		(property "Description" "Microprocessor Reset (active-low) Circuit, SOT-23"
 			(at 82.55 154.94 0)
 			(effects
 				(font
